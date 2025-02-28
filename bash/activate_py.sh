@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/bin/bash 
+## 單純自己整黎，至少以後打字幾個codeT^T
 # Check if an argument is provided
 if [ -z "$1" ]; then
   echo "Usage: source activate.sh <venv_name>"
