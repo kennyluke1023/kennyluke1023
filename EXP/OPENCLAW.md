@@ -54,4 +54,20 @@ openclaw的 setup.jpg (提醒個token...)
 ```bash
 docker compose run --rm openclaw-cli dashboard --no-open
 ```
-多數人可能遇到的問題，是不能接連上http://127.0.0.1:18789/，其因為是沒有openclaw config 檔案中加入url，或沒有打開gateway，這時在Docker desktop 的container會找到報錯的信息(但你不是用docker desktop，你大概個高手(休
+多數人可能遇到的問題，是不能接連上http://127.0.0.1:18789/，其因為是沒有openclaw config 檔案中加入url，或沒有打開gateway，這時在Docker desktop 的container會找到報錯的信息(但你不是用docker desktop，你大概個高手，也是個狠人) >> ...報錯的信息  
+接下來就是我寫文章的重點了，這個報錯是接openclaw 找不到你預設的http://127.0.0.1:18789/地址，所以你輸入地址也沒有反應。我們要做的是先把Docker關掉  
+```bash
+docker compose down
+```
+只要見到remove則說明成功。我們要好檢查，到底為什麼找不到，通常是有config的設定有誤。所以我們要找一個 **.openclaw.json** 。  
+**macOS**
+直接使用快捷鍵搜尋：
+* 按下 **`Command` + `Space`**
+* 輸入：`.openclaw.json`
+
+---
+***🐧Linux / WSL ***
+使用 `find` 指令進行搜尋：
+
+```bash
+find . -name "*.openclaw.json"
