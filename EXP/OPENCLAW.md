@@ -60,14 +60,15 @@ docker compose run --rm openclaw-cli dashboard --no-open
 docker compose down
 ```
 只要見到remove則說明成功。我們要好檢查，到底為什麼找不到，通常是有config的設定有誤。所以我們要找一個 **.openclaw.json** 。  
-**macOS**
+> macOS
 直接使用快捷鍵搜尋：
 * 按下 **`Command` + `Space`**
 * 輸入：`.openclaw.json`
 
 ---
-***🐧Linux / WSL ***
+> **Linux/WSL**
 使用 `find` 指令進行搜尋：
 
 ```bash
-find . -name "*.openclaw.json"
+find ~ | grep "openclaw.json"
+```
